@@ -12,15 +12,37 @@
 
 document.addEventListener("DOMContentLoaded", () => {
 
-const heroName = document.getElementById("character-name").value;
-const heroHp = document.getElementById("character-hp").value;
-const heroAd = document.getElementById("attack-damage").value;
 
-console.log(heroName);
+const heroNameInput = document.getElementById("character-name");
+const heroName = heroNameInput.value;
+const heroHpInput = document.getElementById("character-hp");
+const heroHp = heroHpInput.value;
+const heroAdInput = document.getElementById("attack-damage");
+const heroAd = heroAdInput.value;
+const btnCreateChar = document.getElementById("create-character");
 
-function makeChar() {
-  document.addEventListener("click")
-  const character = { heroName, heroHp, heroAd }
-  localStorage.setItem("character", JSON.stringify(character))
-}
+//Array med profilbildene til heltene. Minus én for å fjerne det ene fiendebildet som delte classname
+let heroImageGallery = document.getElementsByClassName("profile-img");
+let remove = 1;
+let removeImage = (heroImageGallery, remove) => {
+  const copyImageGallery = [...heroImageGallery];
+  for (let i = 0; i < remove; i++) {
+    copyImageGallery.pop();
+  }
+  return copyImageGallery;
+};
+let newImageGallery = removeImage(heroImageGallery, remove);
+
+console.log(newImageGallery);
+
+
+function createChar() {
+  const character = { Navn: heroName, HP: heroHp, Attackpower: heroAd }
+  localStorage.setItem("Helt", JSON.stringify(character))
+  heroName
+};
+
+btnCreateChar.addEventListener("click", createChar);
+
+
 });
