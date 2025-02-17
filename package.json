@@ -4,9 +4,6 @@
   "description": "Arbeidskrav1",
   "main": "app.js",
   "type": "module",
-  "directories": {
-    "test": "jest"
-  },
   "devDependencies": {
     "@babel/core": "^7.26.9",
     "@babel/preset-env": "^7.26.9",
@@ -17,8 +14,8 @@
   "jest": {
     "testEnvironment": "jsdom"
   },
-  "scripts": {1
-    "test": "jest --config ./jest.config.js"
+  "scripts": {
+    "test": "jest"
   },
   "repository": {
     "type": "git",

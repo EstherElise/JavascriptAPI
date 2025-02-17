@@ -200,3 +200,8 @@ function fight () {
 //Knapp: sammenligner HP
 btnStartFight.addEventListener("click", fight)
 });
+
+function add(a, b) {
+  return a + b;
+}
+module.exports = { add };
